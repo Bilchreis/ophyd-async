@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ophyd_async.core._providers &#8212; ophyd-async 0.1.1.dev24+gd61f3fa documentation</title>
+    <title>ophyd_async.core._providers &#8212; ophyd-async 0.1.1.dev25+g9b71a06 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../../_static/documentation_options.js?v=edbad50a"></script>
+    <script src="../../../_static/documentation_options.js?v=9a828264"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -458,18 +458,24 @@ document.write(`
 <div class="viewcode-block" id="NameProvider">
 <a class="viewcode-back" href="../../../user/generated/ophyd_async.core.NameProvider.html#ophyd_async.core.NameProvider">[docs]</a>
 <span class="k">class</span> <span class="nc">NameProvider</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<div class="viewcode-block" id="NameProvider.__call__">
+<a class="viewcode-back" href="../../../user/generated/ophyd_async.core.NameProvider.html#ophyd_async.core.NameProvider.__call__">[docs]</a>
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="o">...</span></div>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the name to be used as a data_key in the descriptor document&quot;&quot;&quot;</span></div>
+</div>
 
 
 
 <div class="viewcode-block" id="ShapeProvider">
 <a class="viewcode-back" href="../../../user/generated/ophyd_async.core.ShapeProvider.html#ophyd_async.core.ShapeProvider">[docs]</a>
 <span class="k">class</span> <span class="nc">ShapeProvider</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<div class="viewcode-block" id="ShapeProvider.__call__">
+<a class="viewcode-back" href="../../../user/generated/ophyd_async.core.ShapeProvider.html#ophyd_async.core.ShapeProvider.__call__">[docs]</a>
     <span class="nd">@abstractmethod</span>
     <span class="k">async</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-        <span class="o">...</span></div>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the shape of the data collection&quot;&quot;&quot;</span></div>
+</div>
 
 </pre></div>
 
