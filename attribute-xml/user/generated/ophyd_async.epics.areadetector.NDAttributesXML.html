@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ophyd_async.epics.areadetector.NDAttributesXML &#8212; ophyd-async 0.1.1.dev24+gd1013a7 documentation</title>
+    <title>ophyd_async.epics.areadetector.NDAttributesXML &#8212; ophyd-async 0.1.1.dev24+g4eb6204 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=a632afc4"></script>
+    <script src="../../_static/documentation_options.js?v=1dc61780"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -564,8 +564,8 @@ may change API on minor release numbers before then</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.epics.areadetector.NDAttributesXML.add_epics_pv" title="ophyd_async.epics.areadetector.NDAttributesXML.add_epics_pv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_epics_pv</span></code></a></p></td>
 <td><p>Add a PV to the attribute list</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_param</span></code></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.epics.areadetector.NDAttributesXML.add_param" title="ophyd_async.epics.areadetector.NDAttributesXML.add_param"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_param</span></code></a></p></td>
+<td><p>Add a driver or plugin parameter to the attribute list</p></td>
 </tr>
 </tbody>
 </table>
@@ -577,7 +577,20 @@ may change API on minor release numbers before then</p>
 <dt>Args:</dt><dd><p>name: The attribute name
 pv: The pv to get from
 datatype: An override datatype, otherwise will use native EPICS type
-description: A description that appears in the</p>
+description: A description that appears in the HDF file as an attribute</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ophyd_async.epics.areadetector.NDAttributesXML.add_param">
+<span class="sig-name descname"><span class="pre">add_param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">datatype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ophyd_async.epics.areadetector.NDAttributeDataType.html#ophyd_async.epics.areadetector.NDAttributeDataType" title="ophyd_async.epics.areadetector.utils.NDAttributeDataType"><span class="pre">NDAttributeDataType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ophyd_async/epics/areadetector/utils.html#NDAttributesXML.add_param"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.epics.areadetector.NDAttributesXML.add_param" title="Link to this definition">#</a></dt>
+<dd><p>Add a driver or plugin parameter to the attribute list</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name: The attribute name
+param: The parameter string as seen in the INP link of the record
+datatype: The datatype of the parameter
+description: A description that appears in the HDF file as an attribute</p>
 </dd>
 </dl>
 </dd></dl>
@@ -631,6 +644,7 @@ description: A description that appears in the</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.areadetector.NDAttributesXML"><code class="docutils literal notranslate"><span class="pre">NDAttributesXML</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.areadetector.NDAttributesXML.add_epics_pv"><code class="docutils literal notranslate"><span class="pre">NDAttributesXML.add_epics_pv()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.areadetector.NDAttributesXML.add_param"><code class="docutils literal notranslate"><span class="pre">NDAttributesXML.add_param()</span></code></a></li>
 </ul>
 </li>
 </ul>

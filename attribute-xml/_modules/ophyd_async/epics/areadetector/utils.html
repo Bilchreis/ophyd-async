@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ophyd_async.epics.areadetector.utils &#8212; ophyd-async 0.1.1.dev24+gd1013a7 documentation</title>
+    <title>ophyd_async.epics.areadetector.utils &#8212; ophyd-async 0.1.1.dev24+g4eb6204 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../../../_static/documentation_options.js?v=a632afc4"></script>
+    <script src="../../../../_static/documentation_options.js?v=1dc61780"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -497,8 +497,7 @@ document.write(`
 <span class="sd">            name: The attribute name</span>
 <span class="sd">            pv: The pv to get from</span>
 <span class="sd">            datatype: An override datatype, otherwise will use native EPICS type</span>
-<span class="sd">            description: A description that appears in the </span>
-<span class="sd">            </span>
+<span class="sd">            description: A description that appears in the HDF file as an attribute            </span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_root</span><span class="p">,</span>
@@ -511,6 +510,8 @@ document.write(`
         <span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="NDAttributesXML.add_param">
+<a class="viewcode-back" href="../../../../user/generated/ophyd_async.epics.areadetector.NDAttributesXML.html#ophyd_async.epics.areadetector.NDAttributesXML.add_param">[docs]</a>
     <span class="k">def</span> <span class="nf">add_param</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -519,6 +520,14 @@ document.write(`
         <span class="n">addr</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
         <span class="n">description</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a driver or plugin parameter to the attribute list</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            name: The attribute name</span>
+<span class="sd">            param: The parameter string as seen in the INP link of the record</span>
+<span class="sd">            datatype: The datatype of the parameter</span>
+<span class="sd">            description: A description that appears in the HDF file as an attribute            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_root</span><span class="p">,</span>
             <span class="s2">&quot;Attribute&quot;</span><span class="p">,</span>
@@ -528,9 +537,11 @@ document.write(`
             <span class="n">addr</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">addr</span><span class="p">),</span>
             <span class="n">datatype</span><span class="o">=</span><span class="n">datatype</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
             <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
+
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Output the XML pretty printed&quot;&quot;&quot;</span>
         <span class="n">ET</span><span class="o">.</span><span class="n">indent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_root</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s2">&quot;    &quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ET</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_root</span><span class="p">,</span> <span class="n">xml_declaration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span></div>
 
