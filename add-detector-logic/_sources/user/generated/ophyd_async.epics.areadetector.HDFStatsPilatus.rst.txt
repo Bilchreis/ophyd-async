@@ -41,9 +41,9 @@ ophyd\_async.epics.areadetector.HDFStatsPilatus
 
    .. autosummary::
    
-      ~HDFStatsPilatus.control
-      ~HDFStatsPilatus.data
+      ~HDFStatsPilatus.controller
       ~HDFStatsPilatus.name
       ~HDFStatsPilatus.parent
+      ~HDFStatsPilatus.writer
    
    

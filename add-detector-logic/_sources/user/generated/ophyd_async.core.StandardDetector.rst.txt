@@ -41,9 +41,9 @@ ophyd\_async.core.StandardDetector
 
    .. autosummary::
    
-      ~StandardDetector.control
-      ~StandardDetector.data
+      ~StandardDetector.controller
       ~StandardDetector.name
       ~StandardDetector.parent
+      ~StandardDetector.writer
    
    

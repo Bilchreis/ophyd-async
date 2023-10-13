@@ -38,6 +38,7 @@ ophyd\_async.epics.areadetector
       SingleTriggerDet
       FileWriteMode
       ImageMode
+      AreaDetector
    
    
 
