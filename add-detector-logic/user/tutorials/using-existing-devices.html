@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Using existing Devices &#8212; ophyd-async 0.1.1.dev32+ga296bb5 documentation</title>
+    <title>Using existing Devices &#8212; ophyd-async 0.1.1.dev33+g2d4cdd6 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=de9a9eef"></script>
+    <script src="../../_static/documentation_options.js?v=10bab4a3"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -440,7 +440,6 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../generated/ophyd_async.epics.areadetector.SingleTriggerDet.html">ophyd_async.epics.areadetector.SingleTriggerDet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../generated/ophyd_async.epics.areadetector.FileWriteMode.html">ophyd_async.epics.areadetector.FileWriteMode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../generated/ophyd_async.epics.areadetector.ImageMode.html">ophyd_async.epics.areadetector.ImageMode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../generated/ophyd_async.epics.areadetector.AreaDetector.html">ophyd_async.epics.areadetector.AreaDetector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../generated/ophyd_async.epics.areadetector.NDAttributeDataType.html">ophyd_async.epics.areadetector.NDAttributeDataType</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../generated/ophyd_async.epics.areadetector.NDAttributesXML.html">ophyd_async.epics.areadetector.NDAttributesXML</a></li>
 </ul>
@@ -451,6 +450,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../generated/ophyd_async.epics.demo.Mover.html">ophyd_async.epics.demo.Mover</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../generated/ophyd_async.epics.demo.SampleStage.html">ophyd_async.epics.demo.SampleStage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../generated/ophyd_async.epics.demo.Sensor.html">ophyd_async.epics.demo.Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../generated/ophyd_async.epics.demo.demo_ad_sim_detector.html">ophyd_async.epics.demo.demo_ad_sim_detector</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../generated/ophyd_async.epics.motion.html">ophyd_async.epics.motion</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -697,12 +697,12 @@ can do a <a class="reference external" href="https://blueskyproject.io/bluesky/g
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="o">&lt;</span><span class="n">grid_scan</span><span class="p">([</span><span class="n">det</span><span class="p">],</span> <span class="n">samp</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">samp</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
 
-<span class="go">Transient Scan ID: 1     Time: 2023-10-16 12:50:57</span>
-<span class="go">Persistent Unique Scan ID: &#39;652b6e1f-f096-4389-ac36-df2009118c6c&#39;</span>
+<span class="go">Transient Scan ID: 1     Time: 2023-10-16 14:01:37</span>
+<span class="go">Persistent Unique Scan ID: &#39;9fbd6e8a-061d-455d-9e5d-2000990dcad0&#39;</span>
 
 
 
-<span class="gh">Out[6]: </span><span class="go">RunEngineResult(run_start_uids=(&#39;652b6e1f-f096-4389-ac36-df2009118c6c&#39;,), plan_result=&#39;652b6e1f-f096-4389-ac36-df2009118c6c&#39;, exit_status=&#39;success&#39;, interrupted=False, reason=&#39;&#39;, exception=None)</span>
+<span class="gh">Out[6]: </span><span class="go">RunEngineResult(run_start_uids=(&#39;9fbd6e8a-061d-455d-9e5d-2000990dcad0&#39;,), plan_result=&#39;9fbd6e8a-061d-455d-9e5d-2000990dcad0&#39;, exit_status=&#39;success&#39;, interrupted=False, reason=&#39;&#39;, exception=None)</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/grid_scan1.png"><img alt="../../_images/grid_scan1.png" src="../../_images/grid_scan1.png" style="width: 4in;" /></a>
@@ -723,12 +723,12 @@ device we can see it gives the same result:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="o">&lt;</span><span class="n">grid_scan</span><span class="p">([</span><span class="n">det</span><span class="p">,</span> <span class="n">det_old</span><span class="p">],</span> <span class="n">samp</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">samp</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
 
-<span class="go">Transient Scan ID: 2     Time: 2023-10-16 12:51:01</span>
-<span class="go">Persistent Unique Scan ID: &#39;f1fe8670-842d-43bf-8d28-41b5256a2c20&#39;</span>
+<span class="go">Transient Scan ID: 2     Time: 2023-10-16 14:01:43</span>
+<span class="go">Persistent Unique Scan ID: &#39;b31f152e-cde1-4d85-9f30-23fbeff7ab89&#39;</span>
 
 
 
-<span class="gh">Out[9]: </span><span class="go">RunEngineResult(run_start_uids=(&#39;f1fe8670-842d-43bf-8d28-41b5256a2c20&#39;,), plan_result=&#39;f1fe8670-842d-43bf-8d28-41b5256a2c20&#39;, exit_status=&#39;success&#39;, interrupted=False, reason=&#39;&#39;, exception=None)</span>
+<span class="gh">Out[9]: </span><span class="go">RunEngineResult(run_start_uids=(&#39;b31f152e-cde1-4d85-9f30-23fbeff7ab89&#39;,), plan_result=&#39;b31f152e-cde1-4d85-9f30-23fbeff7ab89&#39;, exit_status=&#39;success&#39;, interrupted=False, reason=&#39;&#39;, exception=None)</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/grid_scan2.png"><img alt="../../_images/grid_scan2.png" src="../../_images/grid_scan2.png" style="width: 4in;" /></a>
