@@ -38,6 +38,8 @@ ophyd\_async.epics.areadetector
       FileWriteMode
       ImageMode
       AreaDetector
+      NDAttributeDataType
+      NDAttributesXML
    
    
 
