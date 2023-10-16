@@ -26,5 +26,9 @@
   {
     "version": "flyingpanda",
     "url": "https://bluesky.github.io/ophyd-async/flyingpanda/"
+  },
+  {
+    "version": "seq_tables",
+    "url": "https://bluesky.github.io/ophyd-async/seq_tables/"
   }
 ]
