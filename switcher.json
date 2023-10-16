@@ -32,6 +32,10 @@
     "url": "https://bluesky.github.io/ophyd-async/docs-and-readme/"
   },
   {
+    "version": "fix-flaky-test",
+    "url": "https://bluesky.github.io/ophyd-async/fix-flaky-test/"
+  },
+  {
     "version": "flyingpanda",
     "url": "https://bluesky.github.io/ophyd-async/flyingpanda/"
   }
