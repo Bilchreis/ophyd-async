@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ophyd_async.core.StandardDetector &#8212; ophyd-async 0.1.1.dev24+g8d373ce documentation</title>
+    <title>ophyd_async.core.StandardDetector &#8212; ophyd-async 0.1.1.dev30+g9cd84f3 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=fe935965"></script>
+    <script src="../../_static/documentation_options.js?v=5a873838"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -437,10 +437,10 @@ document.write(`
 <li class="toctree-l3 has-children"><a class="reference internal" href="ophyd_async.epics.areadetector.html">ophyd_async.epics.areadetector</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.ad_r.html">ophyd_async.epics.areadetector.ad_r</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.ad_rw.html">ophyd_async.epics.areadetector.ad_rw</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.HDFStatsPilatus.html">ophyd_async.epics.areadetector.HDFStatsPilatus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.SingleTriggerDet.html">ophyd_async.epics.areadetector.SingleTriggerDet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.FileWriteMode.html">ophyd_async.epics.areadetector.FileWriteMode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.ImageMode.html">ophyd_async.epics.areadetector.ImageMode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.AreaDetector.html">ophyd_async.epics.areadetector.AreaDetector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.NDAttributeDataType.html">ophyd_async.epics.areadetector.NDAttributeDataType</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.NDAttributesXML.html">ophyd_async.epics.areadetector.NDAttributesXML</a></li>
 </ul>
@@ -555,7 +555,7 @@ may change API on minor release numbers before then</p>
 <h1>ophyd_async.core.StandardDetector<a class="headerlink" href="#ophyd-async-core-standarddetector" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="ophyd_async.core.StandardDetector">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ophyd_async.core.</span></span><span class="sig-name descname"><span class="pre">StandardDetector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ophyd_async.core.DetectorControl.html#ophyd_async.core.DetectorControl" title="ophyd_async.core.detector.DetectorControl"><span class="pre">DetectorControl</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ophyd_async.core.DetectorWriter.html#ophyd_async.core.DetectorWriter" title="ophyd_async.core.detector.DetectorWriter"><span class="pre">DetectorWriter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_sigs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core.signal.SignalR"><span class="pre">SignalR</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ophyd_async/core/detector.html#StandardDetector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.core.StandardDetector" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ophyd_async.core.</span></span><span class="sig-name descname"><span class="pre">StandardDetector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ophyd_async.core.DetectorControl.html#ophyd_async.core.DetectorControl" title="ophyd_async.core.detector.DetectorControl"><span class="pre">DetectorControl</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ophyd_async.core.DetectorWriter.html#ophyd_async.core.DetectorWriter" title="ophyd_async.core.detector.DetectorWriter"><span class="pre">DetectorWriter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_sigs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core.signal.SignalR"><span class="pre">SignalR</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ophyd_async/core/detector.html#StandardDetector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.core.StandardDetector" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ophyd_async.core.Device.html#ophyd_async.core.Device" title="ophyd_async.core.device.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a>, <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Stageable" title="(in bluesky v1.11.0.post70+g880dbdf2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stageable</span></code></a>, <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Configurable" title="(in bluesky v1.11.0.post70+g880dbdf2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Configurable</span></code></a>, <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Readable" title="(in bluesky v1.11.0.post70+g880dbdf2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Readable</span></code></a>, <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Triggerable" title="(in bluesky v1.11.0.post70+g880dbdf2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Triggerable</span></code></a>, <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.WritesExternalAssets" title="(in bluesky v1.11.0.post70+g880dbdf2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">WritesExternalAssets</span></code></a></p>
 <p>Detector with useful default behaviour.</p>
 <p>Must be supplied instances of classes that inherit from DetectorControl and
@@ -568,7 +568,6 @@ closing the writer, and handling data writing indices).</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>control</strong> – instance of class which inherits from <a class="reference internal" href="ophyd_async.core.DetectorControl.html#ophyd_async.core.DetectorControl" title="ophyd_async.core.DetectorControl"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetectorControl</span></code></a></p></li>
 <li><p><strong>data</strong> – instance of class which inherits from <code class="xref py py-class docutils literal notranslate"><span class="pre">DetectorData</span></code></p></li>
-<li><p><strong>config_sigs</strong> – configuration signals to be used for describing/reading the detector.</p></li>
 <li><p><strong>name</strong> – detector name</p></li>
 </ul>
 </dd>
@@ -582,8 +581,8 @@ closing the writer, and handling data writing indices).</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.core.StandardDetector.collect_asset_docs" title="ophyd_async.core.StandardDetector.collect_asset_docs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_asset_docs</span></code></a></p></td>
 <td><p>Collect stream datum documents for all indices written.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.core.StandardDetector.connect" title="ophyd_async.core.StandardDetector.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a></p></td>
-<td><p>Connect self and all child Devices.</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></p></td>
 <td><p></p></td>
@@ -597,8 +596,8 @@ closing the writer, and handling data writing indices).</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_configuration</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.core.StandardDetector.set_name" title="ophyd_async.core.StandardDetector.set_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_name</span></code></a></p></td>
-<td><p>Set <code class="docutils literal notranslate"><span class="pre">self.name=name</span></code> and each <code class="docutils literal notranslate"><span class="pre">self.child.name=name+&quot;-child&quot;</span></code>.</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_name</span></code></p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.core.StandardDetector.stage" title="ophyd_async.core.StandardDetector.stage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stage</span></code></a></p></td>
 <td><p>Disarm the detector, stop filewriting, and open file for writing.</p></td>
@@ -614,17 +613,17 @@ closing the writer, and handling data writing indices).</p>
 <p class="rubric">Attributes</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">control</span></code></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">controller</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.core.StandardDetector.name" title="ophyd_async.core.StandardDetector.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.core.StandardDetector.name" title="ophyd_async.core.StandardDetector.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
 <td><p>Return the name of the Device</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent</span></code></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent</span></code></p></td>
 <td><p>The parent Device if it exists</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">writer</span></code></p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -652,23 +651,6 @@ closing the writer, and handling data writing indices).</p>
 <dd><p>Collect stream datum documents for all indices written.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="ophyd_async.core.StandardDetector.unstage">
-<span class="sig-name descname"><span class="pre">unstage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/ophyd_async/core/detector.html#StandardDetector.unstage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.core.StandardDetector.unstage" title="Link to this definition">#</a></dt>
-<dd><p>Stop data writing.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ophyd_async.core.StandardDetector.connect">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ophyd_async.core.StandardDetector.connect" title="Link to this definition">#</a></dt>
-<dd><p>Connect self and all child Devices.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sim</strong> – If True then connect in simulation mode.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py property">
 <dt class="sig sig-object py" id="ophyd_async.core.StandardDetector.name">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#ophyd_async.core.StandardDetector.name" title="Link to this definition">#</a></dt>
@@ -676,14 +658,9 @@ closing the writer, and handling data writing indices).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ophyd_async.core.StandardDetector.set_name">
-<span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ophyd_async.core.StandardDetector.set_name" title="Link to this definition">#</a></dt>
-<dd><p>Set <code class="docutils literal notranslate"><span class="pre">self.name=name</span></code> and each <code class="docutils literal notranslate"><span class="pre">self.child.name=name+&quot;-child&quot;</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> – New name to set</p>
-</dd>
-</dl>
+<dt class="sig sig-object py" id="ophyd_async.core.StandardDetector.unstage">
+<span class="sig-name descname"><span class="pre">unstage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/ophyd_async/core/detector.html#StandardDetector.unstage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.core.StandardDetector.unstage" title="Link to this definition">#</a></dt>
+<dd><p>Stop data writing.</p>
 </dd></dl>
 
 </dd></dl>
@@ -738,10 +715,8 @@ closing the writer, and handling data writing indices).</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.core.StandardDetector.trigger"><code class="docutils literal notranslate"><span class="pre">StandardDetector.trigger()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.core.StandardDetector.read"><code class="docutils literal notranslate"><span class="pre">StandardDetector.read()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.core.StandardDetector.collect_asset_docs"><code class="docutils literal notranslate"><span class="pre">StandardDetector.collect_asset_docs()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.core.StandardDetector.unstage"><code class="docutils literal notranslate"><span class="pre">StandardDetector.unstage()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.core.StandardDetector.connect"><code class="docutils literal notranslate"><span class="pre">StandardDetector.connect()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.core.StandardDetector.name"><code class="docutils literal notranslate"><span class="pre">StandardDetector.name</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.core.StandardDetector.set_name"><code class="docutils literal notranslate"><span class="pre">StandardDetector.set_name()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.core.StandardDetector.unstage"><code class="docutils literal notranslate"><span class="pre">StandardDetector.unstage()</span></code></a></li>
 </ul>
 </li>
 </ul>

@@ -34,10 +34,10 @@ ophyd\_async.epics.areadetector
       :template: custom-class-template.rst
       :nosignatures:
    
-      HDFStatsPilatus
       SingleTriggerDet
       FileWriteMode
       ImageMode
+      AreaDetector
       NDAttributeDataType
       NDAttributesXML
    
