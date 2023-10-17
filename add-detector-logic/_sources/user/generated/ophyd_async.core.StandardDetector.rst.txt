@@ -21,6 +21,7 @@ ophyd\_async.core.StandardDetector
    .. autosummary::
       :nosignatures:
    
+      ~StandardDetector.check_config_sigs
       ~StandardDetector.children
       ~StandardDetector.collect_asset_docs
       ~StandardDetector.connect

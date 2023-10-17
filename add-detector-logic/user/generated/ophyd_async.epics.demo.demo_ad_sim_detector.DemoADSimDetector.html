@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector &#8212; ophyd-async 0.1.1.dev35+gf5effd4d documentation</title>
+    <title>ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector &#8212; ophyd-async 0.1.1.dev36+g5a328ff5 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=d76afe3b"></script>
+    <script src="../../_static/documentation_options.js?v=cb277e1b"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -555,42 +555,45 @@ may change API on minor release numbers before then</p>
 <h1>ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector<a class="headerlink" href="#ophyd-async-epics-demo-demo-ad-sim-detector-demoadsimdetector" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ophyd_async.epics.demo.demo_ad_sim_detector.</span></span><span class="sig-name descname"><span class="pre">DemoADSimDetector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory_provider</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ophyd_async.core.DirectoryProvider.html#ophyd_async.core.DirectoryProvider" title="ophyd_async.core._providers.DirectoryProvider"><span class="pre">DirectoryProvider</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_sigs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core.signal.SignalR"><span class="pre">SignalR</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ophyd_async/epics/demo/demo_ad_sim_detector.html#DemoADSimDetector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ophyd_async.epics.demo.demo_ad_sim_detector.</span></span><span class="sig-name descname"><span class="pre">DemoADSimDetector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ADDriver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">NDFileHDF</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory_provider</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ophyd_async.core.DirectoryProvider.html#ophyd_async.core.DirectoryProvider" title="ophyd_async.core._providers.DirectoryProvider"><span class="pre">DirectoryProvider</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_sigs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core.signal.SignalR"><span class="pre">SignalR</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ophyd_async/epics/demo/demo_ad_sim_detector.html#DemoADSimDetector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ophyd_async.core.StandardDetector.html#ophyd_async.core.StandardDetector" title="ophyd_async.core.detector.StandardDetector"><code class="xref py py-class docutils literal notranslate"><span class="pre">StandardDetector</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.check_config_sigs" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.check_config_sigs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_config_sigs</span></code></a></p></td>
+<td><p>Checks configuration signals are named and connected.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.collect_asset_docs" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.collect_asset_docs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_asset_docs</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.collect_asset_docs" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.collect_asset_docs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_asset_docs</span></code></a></p></td>
 <td><p>Collect stream datum documents for all indices written.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.connect" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a></p></td>
+<td><p>Connect self and all child Devices.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe_configuration</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe_configuration</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.read" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.read" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a></p></td>
 <td><p>Unused method: will be deprecated.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_configuration</span></code></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_configuration</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_name</span></code></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.set_name" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.set_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_name</span></code></a></p></td>
+<td><p>Set <code class="docutils literal notranslate"><span class="pre">self.name=name</span></code> and each <code class="docutils literal notranslate"><span class="pre">self.child.name=name+&quot;-child&quot;</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.stage" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.stage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stage</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.stage" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.stage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stage</span></code></a></p></td>
 <td><p>Disarm the detector, stop filewriting, and open file for writing.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.trigger" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.trigger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trigger</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.trigger" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.trigger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trigger</span></code></a></p></td>
 <td><p>Arm the detector and wait for it to finish.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.unstage" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.unstage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unstage</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.unstage" title="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.unstage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unstage</span></code></a></p></td>
 <td><p>Stop data writing.</p></td>
 </tr>
 </tbody>
@@ -613,9 +616,26 @@ may change API on minor release numbers before then</p>
 </tbody>
 </table>
 <dl class="py method">
+<dt class="sig sig-object py" id="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.check_config_sigs">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_config_sigs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.check_config_sigs" title="Link to this definition">#</a></dt>
+<dd><p>Checks configuration signals are named and connected.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.collect_asset_docs">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">collect_asset_docs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.AsyncIterator" title="(in Python v3.12)"><span class="pre">AsyncIterator</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'resource'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.PartialResource" title="(in bluesky v1.11.0.post70+g880dbdf2)"><span class="pre">PartialResource</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'datum'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Datum" title="(in bluesky v1.11.0.post70+g880dbdf2)"><span class="pre">Datum</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'stream_resource'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">StreamResource</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'stream_datum'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">StreamDatum</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.collect_asset_docs" title="Link to this definition">#</a></dt>
 <dd><p>Collect stream datum documents for all indices written.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.connect">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.connect" title="Link to this definition">#</a></dt>
+<dd><p>Connect self and all child Devices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sim</strong> – If True then connect in simulation mode.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -628,6 +648,17 @@ may change API on minor release numbers before then</p>
 <dt class="sig sig-object py" id="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.read">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Reading" title="(in bluesky v1.11.0.post70+g880dbdf2)"><span class="pre">Reading</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.read" title="Link to this definition">#</a></dt>
 <dd><p>Unused method: will be deprecated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.set_name">
+<span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.set_name" title="Link to this definition">#</a></dt>
+<dd><p>Set <code class="docutils literal notranslate"><span class="pre">self.name=name</span></code> and each <code class="docutils literal notranslate"><span class="pre">self.child.name=name+&quot;-child&quot;</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – New name to set</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -696,9 +727,12 @@ may change API on minor release numbers before then</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector"><code class="docutils literal notranslate"><span class="pre">DemoADSimDetector</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.check_config_sigs"><code class="docutils literal notranslate"><span class="pre">DemoADSimDetector.check_config_sigs()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.collect_asset_docs"><code class="docutils literal notranslate"><span class="pre">DemoADSimDetector.collect_asset_docs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.connect"><code class="docutils literal notranslate"><span class="pre">DemoADSimDetector.connect()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.name"><code class="docutils literal notranslate"><span class="pre">DemoADSimDetector.name</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.read"><code class="docutils literal notranslate"><span class="pre">DemoADSimDetector.read()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.set_name"><code class="docutils literal notranslate"><span class="pre">DemoADSimDetector.set_name()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.stage"><code class="docutils literal notranslate"><span class="pre">DemoADSimDetector.stage()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.trigger"><code class="docutils literal notranslate"><span class="pre">DemoADSimDetector.trigger()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ophyd_async.epics.demo.demo_ad_sim_detector.DemoADSimDetector.unstage"><code class="docutils literal notranslate"><span class="pre">DemoADSimDetector.unstage()</span></code></a></li>

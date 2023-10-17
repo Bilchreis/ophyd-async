@@ -21,6 +21,7 @@ ophyd\_async.epics.demo.demo\_ad\_sim\_detector.DemoADSimDetector
    .. autosummary::
       :nosignatures:
    
+      ~DemoADSimDetector.check_config_sigs
       ~DemoADSimDetector.children
       ~DemoADSimDetector.collect_asset_docs
       ~DemoADSimDetector.connect
