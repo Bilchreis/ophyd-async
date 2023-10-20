@@ -34,16 +34,11 @@ ophyd\_async.epics.areadetector
       :template: custom-class-template.rst
       :nosignatures:
    
-      ADDriver
-      DirectoryProvider
-      TmpDirectoryProvider
-      HDFStreamerDet
-      NDFileHDF
-      NDPlugin
-      NDPluginStats
       SingleTriggerDet
       FileWriteMode
       ImageMode
+      NDAttributeDataType
+      NDAttributesXML
    
    
 

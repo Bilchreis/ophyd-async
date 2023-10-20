@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ophyd_async.epics.areadetector.single_trigger_det &#8212; ophyd-async 0.1.1.dev9+g10bfe32 documentation</title>
+    <title>ophyd_async.epics.areadetector.single_trigger_det &#8212; ophyd-async 0.1.1.dev10+g30ffafe9 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../../../_static/documentation_options.js?v=91c76437"></script>
+    <script src="../../../../_static/documentation_options.js?v=b46ea200"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -425,9 +425,9 @@ document.write(`
 
 <span class="kn">from</span> <span class="nn">ophyd_async.core</span> <span class="kn">import</span> <span class="n">AsyncStatus</span><span class="p">,</span> <span class="n">SignalR</span><span class="p">,</span> <span class="n">StandardReadable</span>
 
-<span class="kn">from</span> <span class="nn">.ad_driver</span> <span class="kn">import</span> <span class="n">ADDriver</span>
-<span class="kn">from</span> <span class="nn">.nd_plugin</span> <span class="kn">import</span> <span class="n">NDPlugin</span>
+<span class="kn">from</span> <span class="nn">.drivers.ad_base</span> <span class="kn">import</span> <span class="n">ADBase</span>
 <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">ImageMode</span>
+<span class="kn">from</span> <span class="nn">.writers.nd_plugin</span> <span class="kn">import</span> <span class="n">NDPluginBase</span>
 
 
 <div class="viewcode-block" id="SingleTriggerDet">
@@ -435,10 +435,10 @@ document.write(`
 <span class="k">class</span> <span class="nc">SingleTriggerDet</span><span class="p">(</span><span class="n">StandardReadable</span><span class="p">,</span> <span class="n">Triggerable</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">drv</span><span class="p">:</span> <span class="n">ADDriver</span><span class="p">,</span>
+        <span class="n">drv</span><span class="p">:</span> <span class="n">ADBase</span><span class="p">,</span>
         <span class="n">read_uncached</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SignalR</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">plugins</span><span class="p">:</span> <span class="n">NDPlugin</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">plugins</span><span class="p">:</span> <span class="n">NDPluginBase</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">drv</span> <span class="o">=</span> <span class="n">drv</span>
         <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">plugins</span><span class="p">)</span>

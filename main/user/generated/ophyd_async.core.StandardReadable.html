@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ophyd_async.core.StandardReadable &#8212; ophyd-async 0.1.1.dev9+g10bfe32 documentation</title>
+    <title>ophyd_async.core.StandardReadable &#8212; ophyd-async 0.1.1.dev10+g30ffafe9 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=91c76437"></script>
+    <script src="../../_static/documentation_options.js?v=b46ea200"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -49,8 +49,8 @@
     <link rel="icon" href="../../_static/ophyd_favicon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ophyd_async.core.AsyncStatus" href="ophyd_async.core.AsyncStatus.html" />
-    <link rel="prev" title="ophyd_async.core.DeviceVector" href="ophyd_async.core.DeviceVector.html" />
+    <link rel="next" title="ophyd_async.core.TriggerInfo" href="ophyd_async.core.TriggerInfo.html" />
+    <link rel="prev" title="ophyd_async.core.StaticDirectoryProvider" href="ophyd_async.core.StaticDirectoryProvider.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -406,19 +406,30 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.wait_for_connection.html">ophyd_async.core.wait_for_connection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.SignalBackend.html">ophyd_async.core.SignalBackend</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.SimSignalBackend.html">ophyd_async.core.SimSignalBackend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.DetectorControl.html">ophyd_async.core.DetectorControl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.DetectorTrigger.html">ophyd_async.core.DetectorTrigger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.DetectorWriter.html">ophyd_async.core.DetectorWriter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.StandardDetector.html">ophyd_async.core.StandardDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.Device.html">ophyd_async.core.Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.DeviceCollector.html">ophyd_async.core.DeviceCollector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.DeviceVector.html">ophyd_async.core.DeviceVector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.Signal.html">ophyd_async.core.Signal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.SignalR.html">ophyd_async.core.SignalR</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.SignalW.html">ophyd_async.core.SignalW</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.SignalRW.html">ophyd_async.core.SignalRW</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.SignalX.html">ophyd_async.core.SignalX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.Device.html">ophyd_async.core.Device</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.DeviceCollector.html">ophyd_async.core.DeviceCollector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.DeviceVector.html">ophyd_async.core.DeviceVector</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">ophyd_async.core.StandardReadable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.AsyncStatus.html">ophyd_async.core.AsyncStatus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.DirectoryInfo.html">ophyd_async.core.DirectoryInfo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.DirectoryProvider.html">ophyd_async.core.DirectoryProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.NameProvider.html">ophyd_async.core.NameProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.ShapeProvider.html">ophyd_async.core.ShapeProvider</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.StaticDirectoryProvider.html">ophyd_async.core.StaticDirectoryProvider</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">ophyd_async.core.StandardReadable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.TriggerInfo.html">ophyd_async.core.TriggerInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.DetectorGroupLogic.html">ophyd_async.core.DetectorGroupLogic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.SameTriggerDetectorGroupLogic.html">ophyd_async.core.SameTriggerDetectorGroupLogic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.TriggerLogic.html">ophyd_async.core.TriggerLogic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.HardwareTriggeredFlyable.html">ophyd_async.core.HardwareTriggeredFlyable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.NotConnected.html">ophyd_async.core.NotConnected</a></li>
 </ul>
 </li>
@@ -426,16 +437,11 @@ document.write(`
 <li class="toctree-l3 has-children"><a class="reference internal" href="ophyd_async.epics.areadetector.html">ophyd_async.epics.areadetector</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.ad_r.html">ophyd_async.epics.areadetector.ad_r</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.ad_rw.html">ophyd_async.epics.areadetector.ad_rw</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.ADDriver.html">ophyd_async.epics.areadetector.ADDriver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.DirectoryProvider.html">ophyd_async.epics.areadetector.DirectoryProvider</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.TmpDirectoryProvider.html">ophyd_async.epics.areadetector.TmpDirectoryProvider</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.HDFStreamerDet.html">ophyd_async.epics.areadetector.HDFStreamerDet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.NDFileHDF.html">ophyd_async.epics.areadetector.NDFileHDF</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.NDPlugin.html">ophyd_async.epics.areadetector.NDPlugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.NDPluginStats.html">ophyd_async.epics.areadetector.NDPluginStats</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.SingleTriggerDet.html">ophyd_async.epics.areadetector.SingleTriggerDet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.FileWriteMode.html">ophyd_async.epics.areadetector.FileWriteMode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.ImageMode.html">ophyd_async.epics.areadetector.ImageMode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.NDAttributeDataType.html">ophyd_async.epics.areadetector.NDAttributeDataType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.areadetector.NDAttributesXML.html">ophyd_async.epics.areadetector.NDAttributesXML</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="ophyd_async.epics.demo.html">ophyd_async.epics.demo</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -444,6 +450,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.demo.Mover.html">ophyd_async.epics.demo.Mover</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.demo.SampleStage.html">ophyd_async.epics.demo.SampleStage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.demo.Sensor.html">ophyd_async.epics.demo.Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ophyd_async.epics.demo.demo_ad_sim_detector.html">ophyd_async.epics.demo.demo_ad_sim_detector</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="ophyd_async.epics.motion.html">ophyd_async.epics.motion</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -461,6 +468,8 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="ophyd_async.panda.html">ophyd_async.panda</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.seq_table_from_arrays.html">ophyd_async.panda.seq_table_from_arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.seq_table_from_rows.html">ophyd_async.panda.seq_table_from_rows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.pvi.html">ophyd_async.panda.pvi</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.PandA.html">ophyd_async.panda.PandA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.PcapBlock.html">ophyd_async.panda.PcapBlock</a></li>
@@ -468,6 +477,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.PVIEntry.html">ophyd_async.panda.PVIEntry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.SeqBlock.html">ophyd_async.panda.SeqBlock</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.SeqTable.html">ophyd_async.panda.SeqTable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.SeqTableRow.html">ophyd_async.panda.SeqTableRow</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.SeqTrigger.html">ophyd_async.panda.SeqTrigger</a></li>
 </ul>
 </li>
@@ -548,8 +558,8 @@ may change API on minor release numbers before then</p>
 <h1>ophyd_async.core.StandardReadable<a class="headerlink" href="#ophyd-async-core-standardreadable" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="ophyd_async.core.StandardReadable">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ophyd_async.core.</span></span><span class="sig-name descname"><span class="pre">StandardReadable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ophyd_async/core/_device/standard_readable.html#StandardReadable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.core.StandardReadable" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="ophyd_async.core.Device.html#ophyd_async.core.Device" title="ophyd_async.core._device.device.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a>, <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Readable" title="(in bluesky v1.11.0.post70+g880dbdf2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Readable</span></code></a>, <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Configurable" title="(in bluesky v1.11.0.post70+g880dbdf2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Configurable</span></code></a>, <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Stageable" title="(in bluesky v1.11.0.post70+g880dbdf2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stageable</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ophyd_async.core.</span></span><span class="sig-name descname"><span class="pre">StandardReadable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ophyd_async/core/standard_readable.html#StandardReadable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.core.StandardReadable" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ophyd_async.core.Device.html#ophyd_async.core.Device" title="ophyd_async.core.device.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a>, <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Readable" title="(in bluesky v1.11.0.post72+gac0f5a36)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Readable</span></code></a>, <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Configurable" title="(in bluesky v1.11.0.post72+gac0f5a36)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Configurable</span></code></a>, <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Stageable" title="(in bluesky v1.11.0.post72+gac0f5a36)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stageable</span></code></a></p>
 <p>Device that owns its children and provides useful default behavior.</p>
 <ul class="simple">
 <li><p>When its name is set it renames child Devices</p></li>
@@ -609,7 +619,7 @@ may change API on minor release numbers before then</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="ophyd_async.core.StandardReadable.set_readable_signals">
-<span class="sig-name descname"><span class="pre">set_readable_signals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core._device._signal.signal.SignalR"><span class="pre">SignalR</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core._device._signal.signal.SignalR"><span class="pre">SignalR</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_uncached</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core._device._signal.signal.SignalR"><span class="pre">SignalR</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ophyd_async/core/_device/standard_readable.html#StandardReadable.set_readable_signals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.core.StandardReadable.set_readable_signals" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_readable_signals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core.signal.SignalR"><span class="pre">SignalR</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core.signal.SignalR"><span class="pre">SignalR</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_uncached</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.12)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core.signal.SignalR"><span class="pre">SignalR</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ophyd_async/core/standard_readable.html#StandardReadable.set_readable_signals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.core.StandardReadable.set_readable_signals" title="Link to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -664,20 +674,20 @@ may change API on minor release numbers before then</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ophyd_async.core.DeviceVector.html"
+       href="ophyd_async.core.StaticDirectoryProvider.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ophyd_async.core.DeviceVector</p>
+        <p class="prev-next-title">ophyd_async.core.StaticDirectoryProvider</p>
       </div>
     </a>
     <a class="right-next"
-       href="ophyd_async.core.AsyncStatus.html"
+       href="ophyd_async.core.TriggerInfo.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ophyd_async.core.AsyncStatus</p>
+        <p class="prev-next-title">ophyd_async.core.TriggerInfo</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

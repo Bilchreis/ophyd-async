@@ -44,19 +44,30 @@ ophyd\_async.core
    
       SignalBackend
       SimSignalBackend
+      DetectorControl
+      DetectorTrigger
+      DetectorWriter
+      StandardDetector
+      Device
+      DeviceCollector
+      DeviceVector
       Signal
       SignalR
       SignalW
       SignalRW
       SignalX
-      Device
-      DeviceCollector
-      DeviceVector
-      StandardReadable
       AsyncStatus
       DirectoryInfo
       DirectoryProvider
+      NameProvider
+      ShapeProvider
       StaticDirectoryProvider
+      StandardReadable
+      TriggerInfo
+      DetectorGroupLogic
+      SameTriggerDetectorGroupLogic
+      TriggerLogic
+      HardwareTriggeredFlyable
    
    
 
