@@ -25,18 +25,12 @@ ophyd\_async.core.DetectorGroupLogic
       ~DetectorGroupLogic.collect_asset_docs
       ~DetectorGroupLogic.disarm
       ~DetectorGroupLogic.ensure_armed
+      ~DetectorGroupLogic.hints
       ~DetectorGroupLogic.open
       ~DetectorGroupLogic.wait_for_index
    
    
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~DetectorGroupLogic.controllers
-      ~DetectorGroupLogic.writers
    
    

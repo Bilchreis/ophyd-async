@@ -25,18 +25,12 @@ ophyd\_async.core.SameTriggerDetectorGroupLogic
       ~SameTriggerDetectorGroupLogic.collect_asset_docs
       ~SameTriggerDetectorGroupLogic.disarm
       ~SameTriggerDetectorGroupLogic.ensure_armed
+      ~SameTriggerDetectorGroupLogic.hints
       ~SameTriggerDetectorGroupLogic.open
       ~SameTriggerDetectorGroupLogic.wait_for_index
    
    
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~SameTriggerDetectorGroupLogic.controllers
-      ~SameTriggerDetectorGroupLogic.writers
    
    
