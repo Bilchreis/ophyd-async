@@ -20,6 +20,8 @@ ophyd\_async.panda
       :toctree:
       :nosignatures:
    
+      seq_table_from_arrays
+      seq_table_from_rows
       pvi
    
    
@@ -39,6 +41,7 @@ ophyd\_async.panda
       PVIEntry
       SeqBlock
       SeqTable
+      SeqTableRow
       SeqTrigger
    
    

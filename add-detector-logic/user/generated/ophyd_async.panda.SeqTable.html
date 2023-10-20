@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ophyd_async.panda.SeqTable &#8212; ophyd-async 0.1.1.dev37+g7d1f39d4 documentation</title>
+    <title>ophyd_async.panda.SeqTable &#8212; ophyd-async 0.1.1.dev39+g1ef3737b documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=59a31552"></script>
+    <script src="../../_static/documentation_options.js?v=db95f896"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -49,7 +49,7 @@
     <link rel="icon" href="../../_static/ophyd_favicon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ophyd_async.panda.SeqTrigger" href="ophyd_async.panda.SeqTrigger.html" />
+    <link rel="next" title="ophyd_async.panda.SeqTableRow" href="ophyd_async.panda.SeqTableRow.html" />
     <link rel="prev" title="ophyd_async.panda.SeqBlock" href="ophyd_async.panda.SeqBlock.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -468,6 +468,8 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="ophyd_async.panda.html">ophyd_async.panda</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.seq_table_from_arrays.html">ophyd_async.panda.seq_table_from_arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.seq_table_from_rows.html">ophyd_async.panda.seq_table_from_rows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.pvi.html">ophyd_async.panda.pvi</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.PandA.html">ophyd_async.panda.PandA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.PcapBlock.html">ophyd_async.panda.PcapBlock</a></li>
@@ -475,6 +477,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.PVIEntry.html">ophyd_async.panda.PVIEntry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.SeqBlock.html">ophyd_async.panda.SeqBlock</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">ophyd_async.panda.SeqTable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.SeqTableRow.html">ophyd_async.panda.SeqTableRow</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.panda.SeqTrigger.html">ophyd_async.panda.SeqTrigger</a></li>
 </ul>
 </li>
@@ -555,7 +558,7 @@ may change API on minor release numbers before then</p>
 <h1>ophyd_async.panda.SeqTable<a class="headerlink" href="#ophyd-async-panda-seqtable" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="ophyd_async.panda.SeqTable">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ophyd_async.panda.</span></span><span class="sig-name descname"><span class="pre">SeqTable</span></span><a class="reference internal" href="../../_modules/ophyd_async/panda/panda.html#SeqTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.panda.SeqTable" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ophyd_async.panda.</span></span><span class="sig-name descname"><span class="pre">SeqTable</span></span><a class="reference internal" href="../../_modules/ophyd_async/panda/table.html#SeqTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.panda.SeqTable" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.TypedDict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypedDict</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable table autosummary">
@@ -742,11 +745,11 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
       </div>
     </a>
     <a class="right-next"
-       href="ophyd_async.panda.SeqTrigger.html"
+       href="ophyd_async.panda.SeqTableRow.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ophyd_async.panda.SeqTrigger</p>
+        <p class="prev-next-title">ophyd_async.panda.SeqTableRow</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

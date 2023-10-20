@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ophyd_async.core.flyer &#8212; ophyd-async 0.1.1.dev37+g7d1f39d4 documentation</title>
+    <title>ophyd_async.core.flyer &#8212; ophyd-async 0.1.1.dev39+g1ef3737b documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../../_static/documentation_options.js?v=59a31552"></script>
+    <script src="../../../_static/documentation_options.js?v=db95f896"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -482,7 +482,7 @@ document.write(`
 <div class="viewcode-block" id="DetectorGroupLogic.ensure_armed">
 <a class="viewcode-back" href="../../../user/generated/ophyd_async.core.DetectorGroupLogic.html#ophyd_async.core.DetectorGroupLogic.ensure_armed">[docs]</a>
     <span class="nd">@abstractmethod</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">ensure_armed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trigger_info</span><span class="p">:</span> <span class="n">TriggerInfo</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncStatus</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">ensure_armed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trigger_info</span><span class="p">:</span> <span class="n">TriggerInfo</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Ensure the detectors are armed, return AsyncStatus that waits for disarm.&quot;&quot;&quot;</span></div>
 
 
@@ -526,35 +526,34 @@ document.write(`
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">controllers</span> <span class="o">=</span> <span class="n">controllers</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">writers</span> <span class="o">=</span> <span class="n">writers</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_arm_status</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AsyncStatus</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_arm_statuses</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">AsyncStatus</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_info</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">TriggerInfo</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">async</span> <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Descriptor</span><span class="p">]:</span>
         <span class="k">return</span> <span class="k">await</span> <span class="n">merge_gathered_dicts</span><span class="p">(</span><span class="n">writer</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">for</span> <span class="n">writer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">writers</span><span class="p">)</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">ensure_armed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trigger_info</span><span class="p">:</span> <span class="n">TriggerInfo</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncStatus</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">ensure_armed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trigger_info</span><span class="p">:</span> <span class="n">TriggerInfo</span><span class="p">):</span>
         <span class="k">if</span> <span class="p">(</span>
-            <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arm_status</span>
-            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arm_status</span><span class="o">.</span><span class="n">done</span>
+            <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arm_statuses</span>
+            <span class="ow">or</span> <span class="nb">any</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">done</span> <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arm_statuses</span><span class="p">)</span>
             <span class="ow">or</span> <span class="n">trigger_info</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_info</span>
         <span class="p">):</span>
             <span class="c1"># We need to re-arm</span>
             <span class="k">await</span> <span class="n">gather_list</span><span class="p">(</span><span class="n">controller</span><span class="o">.</span><span class="n">disarm</span><span class="p">()</span> <span class="k">for</span> <span class="n">controller</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">controllers</span><span class="p">)</span>
+            <span class="k">await</span> <span class="n">gather_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_arm_statuses</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">controller</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">controllers</span><span class="p">:</span>
                 <span class="n">required</span> <span class="o">=</span> <span class="n">controller</span><span class="o">.</span><span class="n">get_deadtime</span><span class="p">(</span><span class="n">trigger_info</span><span class="o">.</span><span class="n">livetime</span><span class="p">)</span>
-                <span class="k">assert</span> <span class="n">required</span> <span class="o">&gt;</span> <span class="n">trigger_info</span><span class="o">.</span><span class="n">deadtime</span><span class="p">,</span> <span class="p">(</span>
+                <span class="k">assert</span> <span class="n">required</span> <span class="o">&gt;=</span> <span class="n">trigger_info</span><span class="o">.</span><span class="n">deadtime</span><span class="p">,</span> <span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;Detector </span><span class="si">{</span><span class="n">controller</span><span class="si">}</span><span class="s2"> needs at least </span><span class="si">{</span><span class="n">required</span><span class="si">}</span><span class="s2">s deadtime, &quot;</span>
                     <span class="sa">f</span><span class="s2">&quot;but trigger logic provides only </span><span class="si">{</span><span class="n">trigger_info</span><span class="o">.</span><span class="n">deadtime</span><span class="si">}</span><span class="s2">s&quot;</span>
                 <span class="p">)</span>
-            <span class="n">statuses</span> <span class="o">=</span> <span class="n">gather_list</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_arm_statuses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">gather_list</span><span class="p">(</span>
                 <span class="n">controller</span><span class="o">.</span><span class="n">arm</span><span class="p">(</span>
                     <span class="n">trigger</span><span class="o">=</span><span class="n">trigger_info</span><span class="o">.</span><span class="n">trigger</span><span class="p">,</span> <span class="n">exposure</span><span class="o">=</span><span class="n">trigger_info</span><span class="o">.</span><span class="n">livetime</span>
                 <span class="p">)</span>
                 <span class="k">for</span> <span class="n">controller</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">controllers</span>
             <span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_arm_status</span> <span class="o">=</span> <span class="n">AsyncStatus</span><span class="p">(</span><span class="n">statuses</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_info</span> <span class="o">=</span> <span class="n">trigger_info</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arm_status</span>
 
     <span class="k">async</span> <span class="k">def</span> <span class="nf">collect_asset_docs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncIterator</span><span class="p">[</span><span class="n">Asset</span><span class="p">]:</span>
         <span class="c1"># the below is confusing: gather_list does return an awaitable, but it itself</span>
@@ -626,7 +625,6 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_logic</span> <span class="o">=</span> <span class="n">trigger_logic</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_configuration_signals</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">configuration_signals</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_describe</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Descriptor</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_det_status</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AsyncStatus</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_watchers</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_fly_status</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AsyncStatus</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_fly_start</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -659,11 +657,11 @@ document.write(`
     <span class="k">async</span> <span class="k">def</span> <span class="nf">_prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span>
         <span class="n">trigger_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_logic</span><span class="o">.</span><span class="n">trigger_info</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
         <span class="c1"># Move to start and setup the flyscan, and arm dets in parallel</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_det_status</span><span class="p">,</span> <span class="n">num_frames</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_detector_group_logic</span><span class="o">.</span><span class="n">ensure_armed</span><span class="p">(</span><span class="n">trigger_info</span><span class="p">),</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_logic</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">value</span><span class="p">),</span>
         <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_last_frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_frame</span> <span class="o">+</span> <span class="n">num_frames</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_frame</span> <span class="o">+</span> <span class="n">trigger_info</span><span class="o">.</span><span class="n">num</span>
 
     <span class="k">async</span> <span class="k">def</span> <span class="nf">describe_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Descriptor</span><span class="p">]:</span>
         <span class="k">return</span> <span class="k">await</span> <span class="n">merge_gathered_dicts</span><span class="p">(</span>
@@ -687,7 +685,7 @@ document.write(`
     <span class="k">async</span> <span class="k">def</span> <span class="nf">_fly</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_logic</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="c1"># Wait for all detectors to have written up to a particular frame</span>
-        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detector_group_logic</span><span class="o">.</span><span class="n">wait_for_index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_frame</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detector_group_logic</span><span class="o">.</span><span class="n">wait_for_index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_frame</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">)</span>
 
     <span class="k">async</span> <span class="k">def</span> <span class="nf">collect_asset_docs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncIterator</span><span class="p">[</span><span class="n">Asset</span><span class="p">]:</span>
         <span class="n">current_frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_frame</span>
@@ -695,7 +693,6 @@ document.write(`
             <span class="n">name</span><span class="p">,</span> <span class="n">doc</span> <span class="o">=</span> <span class="n">asset</span>
             <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;stream_datum&quot;</span><span class="p">:</span>
                 <span class="n">current_frame</span> <span class="o">=</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&quot;indices&quot;</span><span class="p">][</span><span class="s2">&quot;stop&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span>
-
             <span class="k">yield</span> <span class="n">asset</span>
         <span class="k">if</span> <span class="n">current_frame</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current_frame</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_current_frame</span> <span class="o">=</span> <span class="n">current_frame</span>

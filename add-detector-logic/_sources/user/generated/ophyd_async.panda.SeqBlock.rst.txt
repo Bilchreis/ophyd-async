@@ -36,5 +36,6 @@ ophyd\_async.panda.SeqBlock
       ~SeqBlock.name
       ~SeqBlock.parent
       ~SeqBlock.table
+      ~SeqBlock.active
    
    
