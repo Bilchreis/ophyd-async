@@ -32,4 +32,11 @@ ophyd\_async.core.DetectorGroupLogic
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DetectorGroupLogic.controllers
+      ~DetectorGroupLogic.writers
+   
    

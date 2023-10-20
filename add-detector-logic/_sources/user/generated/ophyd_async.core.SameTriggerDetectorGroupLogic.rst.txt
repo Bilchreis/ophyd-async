@@ -32,4 +32,11 @@ ophyd\_async.core.SameTriggerDetectorGroupLogic
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SameTriggerDetectorGroupLogic.controllers
+      ~SameTriggerDetectorGroupLogic.writers
+   
    

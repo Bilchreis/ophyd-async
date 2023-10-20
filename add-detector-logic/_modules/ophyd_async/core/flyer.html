@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ophyd_async.core.flyer &#8212; ophyd-async 0.1.1.dev39+g1ef3737b documentation</title>
+    <title>ophyd_async.core.flyer &#8212; ophyd-async 0.1.1.dev40+g2f214746 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../../_static/documentation_options.js?v=db95f896"></script>
+    <script src="../../../_static/documentation_options.js?v=8334cbf3"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -442,6 +442,8 @@ document.write(`
     <span class="n">Reading</span><span class="p">,</span>
     <span class="n">Stageable</span><span class="p">,</span>
     <span class="n">WritesExternalAssets</span><span class="p">,</span>
+    <span class="n">HasHints</span><span class="p">,</span>
+    <span class="n">Hints</span>
 <span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">.async_status</span> <span class="kn">import</span> <span class="n">AsyncStatus</span>
@@ -472,6 +474,16 @@ document.write(`
 <a class="viewcode-back" href="../../../user/generated/ophyd_async.core.DetectorGroupLogic.html#ophyd_async.core.DetectorGroupLogic">[docs]</a>
 <span class="k">class</span> <span class="nc">DetectorGroupLogic</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
     <span class="c1"># Read multipliers here, exposure is set in the plan</span>
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">writers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DetectorWriter</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Writers&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">controllers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DetectorControl</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Controllers&quot;&quot;&quot;</span>
+
 <div class="viewcode-block" id="DetectorGroupLogic.open">
 <a class="viewcode-back" href="../../../user/generated/ophyd_async.core.DetectorGroupLogic.html#ophyd_async.core.DetectorGroupLogic.open">[docs]</a>
     <span class="nd">@abstractmethod</span>
@@ -524,10 +536,26 @@ document.write(`
         <span class="n">controllers</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DetectorControl</span><span class="p">],</span>
         <span class="n">writers</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DetectorWriter</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">controllers</span> <span class="o">=</span> <span class="n">controllers</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">writers</span> <span class="o">=</span> <span class="n">writers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_controllers</span> <span class="o">=</span> <span class="n">controllers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_writers</span> <span class="o">=</span> <span class="n">writers</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_arm_statuses</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">AsyncStatus</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_info</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">TriggerInfo</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">writers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DetectorWriter</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_writers</span>
+
+    <span class="nd">@writers</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">writers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writers</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DetectorWriter</span><span class="p">]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_writers</span> <span class="o">=</span> <span class="n">writers</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">controllers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DetectorControl</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_controllers</span>
+    
+    <span class="nd">@controllers</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">controllers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">controllers</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DetectorControl</span><span class="p">]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_controllers</span> <span class="o">=</span> <span class="n">controllers</span>
 
     <span class="k">async</span> <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Descriptor</span><span class="p">]:</span>
         <span class="k">return</span> <span class="k">await</span> <span class="n">merge_gathered_dicts</span><span class="p">(</span><span class="n">writer</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">for</span> <span class="n">writer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">writers</span><span class="p">)</span>
@@ -612,7 +640,7 @@ document.write(`
 <div class="viewcode-block" id="HardwareTriggeredFlyable">
 <a class="viewcode-back" href="../../../user/generated/ophyd_async.core.HardwareTriggeredFlyable.html#ophyd_async.core.HardwareTriggeredFlyable">[docs]</a>
 <span class="k">class</span> <span class="nc">HardwareTriggeredFlyable</span><span class="p">(</span>
-    <span class="n">Device</span><span class="p">,</span> <span class="n">Movable</span><span class="p">,</span> <span class="n">Stageable</span><span class="p">,</span> <span class="n">Flyable</span><span class="p">,</span> <span class="n">Collectable</span><span class="p">,</span> <span class="n">WritesExternalAssets</span><span class="p">,</span> <span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">]</span>
+    <span class="n">Device</span><span class="p">,</span> <span class="n">Movable</span><span class="p">,</span> <span class="n">Stageable</span><span class="p">,</span> <span class="n">Flyable</span><span class="p">,</span> <span class="n">Collectable</span><span class="p">,</span> <span class="n">WritesExternalAssets</span><span class="p">,</span> <span class="n">HasHints</span><span class="p">,</span> <span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">],</span>
 <span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -717,7 +745,11 @@ document.write(`
             <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_logic</span><span class="o">.</span><span class="n">stop</span><span class="p">(),</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_detector_group_logic</span><span class="o">.</span><span class="n">close</span><span class="p">(),</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_detector_group_logic</span><span class="o">.</span><span class="n">disarm</span><span class="p">(),</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">hints</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Hints</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">field</span> <span class="k">for</span> <span class="n">writer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detector_group_logic</span><span class="o">.</span><span class="n">writers</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="s2">&quot;hints&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">writer</span><span class="o">.</span><span class="n">hints</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">)]}</span></div>
 
 </pre></div>
 
