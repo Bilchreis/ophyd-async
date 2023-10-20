@@ -28,6 +28,10 @@
     "url": "https://bluesky.github.io/ophyd-async/flyingpanda/"
   },
   {
+    "version": "get-count-to-work-with-async-aravis-detector",
+    "url": "https://bluesky.github.io/ophyd-async/get-count-to-work-with-async-aravis-detector/"
+  },
+  {
     "version": "seq_tables",
     "url": "https://bluesky.github.io/ophyd-async/seq_tables/"
   }
