@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ophyd_async.core.SignalRW &#8212; ophyd-async 0.1.1.dev11+g9f46520c documentation</title>
+    <title>ophyd_async.core.SignalRW &#8212; ophyd-async 0.1.1.dev18+g42416543 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=535ed1e0"></script>
+    <script src="../../_static/documentation_options.js?v=5d18e35a"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -404,6 +404,11 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.get_unique.html">ophyd_async.core.get_unique</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.merge_gathered_dicts.html">ophyd_async.core.merge_gathered_dicts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.wait_for_connection.html">ophyd_async.core.wait_for_connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.get_signal_values.html">ophyd_async.core.get_signal_values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.load_from_yaml.html">ophyd_async.core.load_from_yaml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.save_to_yaml.html">ophyd_async.core.save_to_yaml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.set_signal_values.html">ophyd_async.core.set_signal_values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.walk_rw_signals.html">ophyd_async.core.walk_rw_signals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.SignalBackend.html">ophyd_async.core.SignalBackend</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.SimSignalBackend.html">ophyd_async.core.SimSignalBackend</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ophyd_async.core.DetectorControl.html">ophyd_async.core.DetectorControl</a></li>
@@ -559,7 +564,7 @@ may change API on minor release numbers before then</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ophyd_async.core.SignalRW">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ophyd_async.core.</span></span><span class="sig-name descname"><span class="pre">SignalRW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ophyd_async.core.SignalBackend.html#ophyd_async.core.SignalBackend" title="ophyd_async.core.signal_backend.SignalBackend"><span class="pre">SignalBackend</span></a><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ophyd_async/core/signal.html#SignalRW"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ophyd_async.core.SignalRW" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core.signal.SignalR"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalR</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code>], <a class="reference internal" href="ophyd_async.core.SignalW.html#ophyd_async.core.SignalW" title="ophyd_async.core.signal.SignalW"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalW</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code>]</p>
+<dd><p>Bases: <a class="reference internal" href="ophyd_async.core.SignalR.html#ophyd_async.core.SignalR" title="ophyd_async.core.signal.SignalR"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalR</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code>], <a class="reference internal" href="ophyd_async.core.SignalW.html#ophyd_async.core.SignalW" title="ophyd_async.core.signal.SignalW"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalW</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code>], <a class="reference external" href="https://blueskyproject.io/bluesky/hardware.html#bluesky.protocols.Locatable" title="(in bluesky v1.11.0.post78+g44579d52)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Locatable</span></code></a></p>
 <p>Signal that can be both read and set</p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable table autosummary">
@@ -579,25 +584,28 @@ may change API on minor release numbers before then</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.get_value" title="ophyd_async.core.SignalRW.get_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_value</span></code></a></p></td>
 <td><p>The current value</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.read" title="ophyd_async.core.SignalRW.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a></p></td>
-<td><p>Return a single item dict with the reading in it</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.set" title="ophyd_async.core.SignalRW.set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code></a></p></td>
-<td><p>Set the value and return a status saying when it's done</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_name</span></code></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.stage" title="ophyd_async.core.SignalRW.stage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stage</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.read" title="ophyd_async.core.SignalRW.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a></p></td>
+<td><p>Return a single item dict with the reading in it</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.set" title="ophyd_async.core.SignalRW.set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code></a></p></td>
+<td><p>Set the value and return a status saying when it's done</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_name</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.stage" title="ophyd_async.core.SignalRW.stage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stage</span></code></a></p></td>
 <td><p>Start caching this signal</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.subscribe" title="ophyd_async.core.SignalRW.subscribe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subscribe</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.subscribe" title="ophyd_async.core.SignalRW.subscribe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subscribe</span></code></a></p></td>
 <td><p>Subscribe to updates in the reading</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.subscribe_value" title="ophyd_async.core.SignalRW.subscribe_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subscribe_value</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.subscribe_value" title="ophyd_async.core.SignalRW.subscribe_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subscribe_value</span></code></a></p></td>
 <td><p>Subscribe to updates in value of a device</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.unstage" title="ophyd_async.core.SignalRW.unstage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unstage</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ophyd_async.core.SignalRW.unstage" title="ophyd_async.core.SignalRW.unstage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unstage</span></code></a></p></td>
 <td><p>Stop caching this signal</p></td>
 </tr>
 </tbody>

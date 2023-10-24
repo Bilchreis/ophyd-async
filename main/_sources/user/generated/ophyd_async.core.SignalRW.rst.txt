@@ -26,6 +26,7 @@ ophyd\_async.core.SignalRW
       ~SignalRW.connect
       ~SignalRW.describe
       ~SignalRW.get_value
+      ~SignalRW.locate
       ~SignalRW.read
       ~SignalRW.set
       ~SignalRW.set_name

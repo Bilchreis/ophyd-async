@@ -28,10 +28,6 @@
     "url": "https://bluesky.github.io/ophyd-async/get-count-to-work-with-async-aravis-detector/"
   },
   {
-    "version": "pyproject-changes",
-    "url": "https://bluesky.github.io/ophyd-async/pyproject-changes/"
-  },
-  {
     "version": "revert-33-rename-objects",
     "url": "https://bluesky.github.io/ophyd-async/revert-33-rename-objects/"
   },

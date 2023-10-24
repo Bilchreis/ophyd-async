@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Using existing Devices &#8212; ophyd-async 0.1.1.dev11+g9f46520c documentation</title>
+    <title>Using existing Devices &#8212; ophyd-async 0.1.1.dev18+g42416543 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=535ed1e0"></script>
+    <script src="../../_static/documentation_options.js?v=5d18e35a"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -404,6 +404,11 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../generated/ophyd_async.core.get_unique.html">ophyd_async.core.get_unique</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../generated/ophyd_async.core.merge_gathered_dicts.html">ophyd_async.core.merge_gathered_dicts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../generated/ophyd_async.core.wait_for_connection.html">ophyd_async.core.wait_for_connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/ophyd_async.core.get_signal_values.html">ophyd_async.core.get_signal_values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/ophyd_async.core.load_from_yaml.html">ophyd_async.core.load_from_yaml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/ophyd_async.core.save_to_yaml.html">ophyd_async.core.save_to_yaml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/ophyd_async.core.set_signal_values.html">ophyd_async.core.set_signal_values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/ophyd_async.core.walk_rw_signals.html">ophyd_async.core.walk_rw_signals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../generated/ophyd_async.core.SignalBackend.html">ophyd_async.core.SignalBackend</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../generated/ophyd_async.core.SimSignalBackend.html">ophyd_async.core.SimSignalBackend</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../generated/ophyd_async.core.DetectorControl.html">ophyd_async.core.DetectorControl</a></li>
@@ -700,12 +705,12 @@ can do a <a class="reference external" href="https://blueskyproject.io/bluesky/g
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="o">&lt;</span><span class="n">grid_scan</span><span class="p">([</span><span class="n">det</span><span class="p">],</span> <span class="n">samp</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">samp</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
 
-<span class="go">Transient Scan ID: 1     Time: 2023-10-23 08:51:56</span>
-<span class="go">Persistent Unique Scan ID: &#39;d005216a-bb28-4158-a300-874577fccf04&#39;</span>
+<span class="go">Transient Scan ID: 1     Time: 2023-10-24 15:45:47</span>
+<span class="go">Persistent Unique Scan ID: &#39;a553fbfa-e13c-4107-8b70-858cd4f4765f&#39;</span>
 
 
 
-<span class="gh">Out[6]: </span><span class="go">RunEngineResult(run_start_uids=(&#39;d005216a-bb28-4158-a300-874577fccf04&#39;,), plan_result=&#39;d005216a-bb28-4158-a300-874577fccf04&#39;, exit_status=&#39;success&#39;, interrupted=False, reason=&#39;&#39;, exception=None)</span>
+<span class="gh">Out[6]: </span><span class="go">RunEngineResult(run_start_uids=(&#39;a553fbfa-e13c-4107-8b70-858cd4f4765f&#39;,), plan_result=&#39;a553fbfa-e13c-4107-8b70-858cd4f4765f&#39;, exit_status=&#39;success&#39;, interrupted=False, reason=&#39;&#39;, exception=None)</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/grid_scan1.png"><img alt="../../_images/grid_scan1.png" src="../../_images/grid_scan1.png" style="width: 4in;" /></a>
@@ -726,12 +731,12 @@ device we can see it gives the same result:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="o">&lt;</span><span class="n">grid_scan</span><span class="p">([</span><span class="n">det</span><span class="p">,</span> <span class="n">det_old</span><span class="p">],</span> <span class="n">samp</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">samp</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
 
-<span class="go">Transient Scan ID: 2     Time: 2023-10-23 08:52:01</span>
-<span class="go">Persistent Unique Scan ID: &#39;eca5232e-b824-440a-b735-38ae35ddbe90&#39;</span>
+<span class="go">Transient Scan ID: 2     Time: 2023-10-24 15:45:53</span>
+<span class="go">Persistent Unique Scan ID: &#39;4b241de1-5eb9-4d50-9c0d-ddaea3497e3c&#39;</span>
 
 
 
-<span class="gh">Out[9]: </span><span class="go">RunEngineResult(run_start_uids=(&#39;eca5232e-b824-440a-b735-38ae35ddbe90&#39;,), plan_result=&#39;eca5232e-b824-440a-b735-38ae35ddbe90&#39;, exit_status=&#39;success&#39;, interrupted=False, reason=&#39;&#39;, exception=None)</span>
+<span class="gh">Out[9]: </span><span class="go">RunEngineResult(run_start_uids=(&#39;4b241de1-5eb9-4d50-9c0d-ddaea3497e3c&#39;,), plan_result=&#39;4b241de1-5eb9-4d50-9c0d-ddaea3497e3c&#39;, exit_status=&#39;success&#39;, interrupted=False, reason=&#39;&#39;, exception=None)</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/grid_scan2.png"><img alt="../../_images/grid_scan2.png" src="../../_images/grid_scan2.png" style="width: 4in;" /></a>
