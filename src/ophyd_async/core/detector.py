@@ -18,7 +18,7 @@ from bluesky.protocols import (
 from .async_status import AsyncStatus
 from .device import Device
 from .signal import SignalR
-from .utils import merge_gathered_dicts
+from .utils import DEFAULT_TIMEOUT, merge_gathered_dicts
 
 
 class DetectorTrigger(str, Enum):
@@ -171,7 +171,10 @@ class StandardDetector(
         indices_written = await self.writer.get_indices_written()
         written_status = await self.controller.arm(DetectorTrigger.internal, num=1)
         await written_status
-        await self.writer.wait_for_index(indices_written + 1)
+        await asyncio.wait(
+            [self.writer.wait_for_index(indices_written + 1)],
+            timeout=DEFAULT_TIMEOUT,
+        )
 
     async def read(self) -> Dict[str, Reading]:
         """Unused method: will be deprecated."""
